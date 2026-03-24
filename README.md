@@ -37,6 +37,14 @@ This project simulates how modern security teams reduce manual effort and respon
 - Managed Identities
 
 ---
+##  Real-World Use Case
+This automation simulates how a SOC team would:
+- Automatically triage brute-force attacks
+- Enrich incidents before analyst review
+- Reduce manual investigation time
+- Standardize response actions across incidents
+
+---
 
 ## Detection Logic
 
@@ -95,22 +103,32 @@ SecurityEvent
 ---
 
 
+## Operational Impact
+This automation reduces:
+- Mean Time to Respond (MTTR)
+- Analyst fatigue from repetitive triage tasks
+- Risk of missed incidents
+
+This design aligns with real SOC goals:
+- Scalable incident handling
+- Consistent response workflows
+- Faster threat containment
 
 
-## Implementation Challenges & Troubleshooting
+---
+
+## Implementation Challenges & Troubleshooting Insights
+
 ### 1. RBAC & Permissions (Critical)
 
-One of the biggest challenges was configuring Azure Role-Based Access Control (RBAC) correctly.
-
-To enable automation:
-
+Playbook initially failed due to missing RBAC permissions.
+To enable automation, I:
 - Assigned Microsoft Sentinel Contributor role to the Logic App's Managed Identity
 - Granted the Logic App permission to:
     - Read incidents
     - Update incidents
     - Add comments
-
-Without this, the playbook would trigger but fail silently or not update incidents.
+- Validated automation execution through run history and API responses
 
 ### 2. Playbook Trigger Configuration
 
@@ -135,6 +153,14 @@ Understanding that:
 - Exposed VM immediately received continuous authentication attempts
 - Required filtering and threshold tuning to avoid alert fatigue
 
+---
+
+## Security Considerations
+
+- Used Managed Identity instead of credentials
+- Applied least privilege RBAC (Sentinel Contributor)
+- Ensured secure API communication between Sentinel and Logic Apps
+  
 ---
 
 ## Key Takeaways
