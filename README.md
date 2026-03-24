@@ -1,5 +1,5 @@
 # Sentinel Incident Response Automation Lab (SOAR)
-### CyberSecurity | CloudSecurity | MicrosoftSentinel | SOAR | DetectionEngineering | Azure | SecurityAutomation | SOC | ThreatDetection
+### CyberSecurity | CloudSecurity | MicrosoftSentinel | SOAR | DetectionEngineering | Azure | SIEM | SecurityAutomation | SOC | ThreatDetection
 
 ![Lab Architecture](images/Sentinel_Incident_Response_Automation_Lab_Architecture.png)
 
@@ -48,6 +48,8 @@ SecurityEvent
 | project TimeGenerated, Account, Computer, IpAddress, FailedAttempts
 
 ```
+### Detection Logic Output
+![Detection Logic](images/detection_logic_kql.png)
 
 ---
 
@@ -62,6 +64,38 @@ SecurityEvent
      - Tags → Auto-Enriched, AutoPlaybook
  
 ---
+
+## Screenshots of my Results
+### 🔹 Incident Triggered in Sentinel
+**`See Tags added: Auto-Enriched, AutoPlaybook`**
+![ Incident Triggered in Sentinel](images/incident_triggered_in_sentinel.png)
+
+---
+
+### 🔹 Playbook Execution (Run History)
+![ Playbook Execution](images/playbook_run_history.png)
+
+---
+
+### 🔹 Add Comment To Incident Raw Output
+![ Add Comment to Incident Output](images/raw_output_playbook_add_comment.png)
+
+---
+
+### 🔹 Sentinel Incident Attack Story
+![ Incident Alert Story](images/incident_triggered_in_sentinel_alert_story.png)
+
+---
+
+
+### 🔹 Sentinel Incident Activities
+![ Incident Triggered in Sentinel](images/incident_triggered_in_sentinel_activities.png)
+
+
+---
+
+
+
 
 ## Implementation Challenges & Troubleshooting
 ### 1. RBAC & Permissions (Critical)
@@ -86,7 +120,7 @@ Understanding that:
 - Correct configuration was required to ensure:
     - Trigger = Incident Creation
     - Playbook runs automatically
-    - 
+      
 ### 3. Entity Mapping Limitations
 - Some events (e.g., missing IP addresses) resulted in incomplete enrichment
 - Required validation of entity mappings in analytics rule
@@ -104,7 +138,7 @@ Understanding that:
 ---
 
 ## Key Takeaways
-- Detection alone is not enough — automation is critical at scale
+- Detection alone is not enough. Automation is critical at scale
 - RBAC and permissions are foundational to SOAR success
 - Incident enrichment significantly reduces analyst investigation time
 - Even small cloud environments are constantly targeted
@@ -116,4 +150,10 @@ Understanding that:
 - Threat Intelligence Enrichment (IP reputation)
 - Auto-remediation (IP blocking, account disable)
 - Integration with external systems (ServiceNow, Slack)
+
+---
   
+### 👤 Author
+**Chido Efobi**
+
+Cloud Security | Detection Engineering | SIEM/SOAR Automation
