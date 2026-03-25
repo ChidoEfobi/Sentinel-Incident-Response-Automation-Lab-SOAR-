@@ -90,6 +90,11 @@ SecurityEvent
 
 ---
 
+### 🔹 Automated Incident Response Results (KQL)
+![Automated Incident Response Results](images/playbook_modified_security_incident_output.png)
+
+---
+
 ### 🔹 Sentinel Incident Attack Story
 ![ Incident Alert Story](images/incident_triggered_in_sentinel_alert_story.png)
 
